@@ -25,10 +25,11 @@ def driver_setup():
 def login(driver_setup):
     driver = driver_setup
     login_page = LoginActionPage(driver)
-    login_page.open_login_url("https://www.saucedemo.com")
+    login_page.open_login_url("https://thinking-tester-contact-list.herokuapp.com/contactList")
     return login_page
 
 def test_login(login):
-    login.enter_username("standard_user")
-    login.enter_password("secret_sauce")
+    login.logout()
+    login.enter_username("obayemio25@gmail.com")
+    login.enter_password("asdfghjkl")
     login.login()

@@ -18,11 +18,17 @@ class LoginActionPage:
     def open_login_url(self, url):
         self.driver.get(url)
 
-    def enter_username(self, username):
+    def logout(self):
         element = WebDriverWait(self.driver, 10).until(
-            ec.presence_of_element_located(LoginActionLocator.USERNAME)
+            ec.presence_of_element_located(LoginActionLocator.LOGOUT)
         )
-        element.send_keys(username)
+        element.click()
+
+    def enter_username(self, email):
+        element = WebDriverWait(self.driver, 10).until(
+            ec.presence_of_element_located(LoginActionLocator.EMAIL)
+        )
+        element.send_keys(email)
 
     def enter_password(self, password):
         element = WebDriverWait(self.driver, 10).until(

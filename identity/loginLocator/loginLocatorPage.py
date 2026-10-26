@@ -2,7 +2,8 @@ from selenium.webdriver.common.by import By
 
 
 class LoginActionLocator:
-    USERNAME = (By.ID, "user-name")
+    EMAIL = (By.ID, "email")
     PASSWORD = (By.ID, "password")
-    LOGIN = (By.ID, "login-button")
+    LOGIN = (By.ID, "submit")
+    LOGOUT = (By.ID, "logout")
 
